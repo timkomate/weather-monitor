@@ -11,7 +11,8 @@ The **Weather Monitor** is a Python script that fetches and displays weather inf
 
 ## Prerequisites
 
-- Python: Make sure you have Python installed on your system. You can download and install Python from the official [Python website](https://www.python.org/downloads/).
+- Python 3.x installed on your system.
+- An active API key from OpenWeatherMap. You can sign up for an API key on their [website](https://home.openweathermap.org/users/sign_up).
 
 ## Usage
 
