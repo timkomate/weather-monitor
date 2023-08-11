@@ -43,13 +43,6 @@ Replace `your_city_name` with the name of the city for which you want to monitor
 - Open a terminal or command prompt.
 - Navigate to the directory containing the script.
 - Run the script using the following command:
-`python weather_monitor.py`
 
-## How It Works
-The script defines a WeatherMonitor class that encapsulates the functionality.
-JSON files (`secrets.json` and `config.json`) are loaded using the `load_json` method.
-The `fetch_weather_data` method sends a request to the OpenWeatherMap API and handles exceptions.
-The `display_weather_info` method extracts temperature, humidity, and pressure and prints the information.
-The run method continuously fetches and displays weather data with the specified refresh interval.
-The main block initializes the WeatherMonitor instance and starts the monitoring loop.
+```python weather_monitor.py```
 
