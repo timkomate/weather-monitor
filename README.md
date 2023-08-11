@@ -23,10 +23,10 @@ The **Weather Monitor** is a Python script that fetches and displays weather inf
 3. Configuration:
    - Create a file named `secrets.json` in the same directory as the script. This file should contain your API key in the following format:
 
-   ```json
-   {
-       "API_KEY": "your_api_key_here"
-   }
+```
+{
+  "API_KEY": "your_api_key_here"
+}
 ```
 
 4. Create a file named config.json in the same directory to configure the script behavior. The file should have the following structure:
