@@ -38,8 +38,12 @@ class WeatherMonitor:
             temp = weather_data["main"]["temp"]
             humidity = weather_data["main"]["humidity"]
             pressure = weather_data["main"]["pressure"]
+            description = weather_data["weather"][0]["description"]
+            windspeed = weather_data["wind"]["speed"]
+            winddir = weather_data["wind"]["deg"]
+            clouds = weather_data["clouds"]["all"]
             self.logger.info(
-                f"Temperature: {temp}°C, Humidity: {humidity}%, Pressure: {pressure} hPa"
+                    f"Temperature: {temp}*C, Humidity: {humidity}%, Pressure: {pressure} hPa, Windspeed: {windspeed} km/h, Wind direction: {winddir}*, Clouds: {clouds}%, Description: {description}"
             )
 
     def run(self):
