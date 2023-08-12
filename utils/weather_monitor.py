@@ -2,6 +2,7 @@ import requests
 import time
 import json
 
+
 class WeatherMonitor:
     def __init__(self, secrets_path, config_path):
         self.secrets = self.load_json(secrets_path)
@@ -28,7 +29,9 @@ class WeatherMonitor:
             temp = weather_data["main"]["temp"]
             humidity = weather_data["main"]["humidity"]
             pressure = weather_data["main"]["pressure"]
-            print(f"Temperature: {temp}°C, Humidity: {humidity}%, Pressure: {pressure} hPa")
+            print(
+                f"Temperature: {temp}°C, Humidity: {humidity}%, Pressure: {pressure} hPa"
+            )
 
     def run(self):
         while True:
@@ -36,6 +39,7 @@ class WeatherMonitor:
             if weather_data:
                 self.display_weather_info(weather_data)
             time.sleep(self.config["dt"])
+
 
 if __name__ == "__main__":
     monitor = WeatherMonitor("./secrets.json", "./config.json")
