@@ -1,4 +1,9 @@
 {
+  "database_user": "root",
+  "host": "0.0.0.0",
+  "port": 3308,
+  "database": "outside",
+  "table_name": "Data", 
   "city": "Budapest",
   "dt": 30
 }
