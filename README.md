@@ -22,7 +22,7 @@ The **Weather Monitor** is a Python script that fetches and displays weather inf
    - To use the OpenWeatherMap API, you need to obtain an API key. You can sign up and get your API key from the [OpenWeatherMap website](https://home.openweathermap.org/users/sign_up).
 
 3. Configuration:
-   - Create a file named `secrets.json` in the same directory as the script. This file should contain your API key in the following format:
+   - Create a file named `secrets.json` (or copy the example form the `configs/` directory) in the root directory as the script. This file should contain your API key in the following format:
 
 ```
 {
@@ -30,7 +30,7 @@ The **Weather Monitor** is a Python script that fetches and displays weather inf
 }
 ```
 
-4. Create a file named config.json in the same directory to configure the script behavior. The file should have the following structure:
+4. Create a file named `config.json` (or copy the example from the `configs/` directory) in the root directory to configure the script behavior. The file should have the following structure:
 ```
 {
     "city": "your_city_name",
