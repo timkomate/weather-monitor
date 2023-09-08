@@ -64,6 +64,7 @@ class WeatherMonitor:
             windspeed = weather_data["wind"]["speed"]
             winddir = weather_data["wind"]["deg"]
             clouds = weather_data["clouds"]["all"]
+            self.logger.info(weather_data)
             if "rain" in weather_data:
                 rain = weather_data["rain"]["1h"]
             else:
@@ -71,7 +72,7 @@ class WeatherMonitor:
             self.logger.info(
                 f"Temperature: {temp}*C, Humidity: {humidity}%, Pressure: {pressure} hPa, Rain: {rain} mm, Windspeed: {windspeed} km/h, Wind direction: {winddir}*, Clouds: {clouds}%, Description: {description}"
             )
-            query = f"INSERT INTO {self.config['db_table_name']} (date, temperature, humidity, pressure, windspeed, winddir,clouds, description) VALUES ('{now}', '{temp}', '{humidity}', '{pressure}', '{windspeed}', '{winddir}', '{clouds}','{description}')"
+            query = f"INSERT INTO {self.config['db_table_name']} (date, temperature, humidity, rain, pressure, windspeed, winddir,clouds, description) VALUES ('{now}', '{temp}', '{humidity}', '{rain}', '{pressure}', '{windspeed}', '{winddir}', '{clouds}','{description}')"
             self.logger.debug(query)
             try:
                 self.cur.execute(query)
@@ -88,8 +89,3 @@ class WeatherMonitor:
             if weather_data:
                 self.log_weather_data(weather_data)
             time.sleep(self.config["dt"])
-
-
-if __name__ == "__main__":
-    monitor = WeatherMonitor("./secrets.json", "./config.json")
-    monitor.run()
