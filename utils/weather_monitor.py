@@ -64,8 +64,12 @@ class WeatherMonitor:
             windspeed = weather_data["wind"]["speed"]
             winddir = weather_data["wind"]["deg"]
             clouds = weather_data["clouds"]["all"]
+            if "rain" in weather_data:
+                rain = weather_data["rain"]["1h"]
+            else:
+                rain = 0
             self.logger.info(
-                f"Temperature: {temp}*C, Humidity: {humidity}%, Pressure: {pressure} hPa, Windspeed: {windspeed} km/h, Wind direction: {winddir}*, Clouds: {clouds}%, Description: {description}"
+                f"Temperature: {temp}*C, Humidity: {humidity}%, Pressure: {pressure} hPa, Rain: {rain} mm, Windspeed: {windspeed} km/h, Wind direction: {winddir}*, Clouds: {clouds}%, Description: {description}"
             )
             query = f"INSERT INTO {self.config['db_table_name']} (date, temperature, humidity, pressure, windspeed, winddir,clouds, description) VALUES ('{now}', '{temp}', '{humidity}', '{pressure}', '{windspeed}', '{winddir}', '{clouds}','{description}')"
             self.logger.debug(query)
